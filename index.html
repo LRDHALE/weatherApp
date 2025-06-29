@@ -1,36 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Weather App With JavaScript</title>
-    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <!-- robots Meta Tag: Allows indexing and following links. -->
+    <meta name="robots" content="index, follow">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <title>Weather App - Check Your Local Weather Instantly</title>
+    <meta name="description" content="A simple and fast weather app to check current weather conditions like temperature, wind speed, and humidity by city name.">
+
+    <!-- Social Meta -->
+    <meta property="og:title" content="Weather App - Instant Local Weather Updates">
+    <meta property="og:description" content="Check live weather updates including temperature, wind, and humidity by entering your location.">
+    <meta property="og:image" content="/assets/cloud.png">
+    <meta property="og:type" content="website">
+
+    <!-- Canonical Link: Helps avoid duplicate content issues. -->
+    <link rel="canonical" href="https://yourwebsite.com">
+
+    <!-- CSS & Fonts -->
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/e4ff6c760c.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="container">
-        <header class="header">
-            <form class="search-box" role="search">
-                <input type="text" placeholder="Enter your location" class="input-box" aria-label="Location" />
-                <button type="button" class="fa-solid fa-magnifying-glass" id="searchBtn" aria-label="Search"></button>
+    <main class="container">
+        <header class="header" role="banner">
+            <h1>Weather App</h1>
+            <form class="search-box" role="search" aria-label="Search Weather By Location">
+                <label for="location-input" class="visually-hidden">Enter Location</label>
+                <input type="text" id="location-input" placeholder="Enter your location" class="input-box" name="location">
+                <button type="submit" id="searchBtn" class="fa-solid fa-magnifying-glass" aria-label="Search Weather"></button>
             </form>
         </header>
 
-        <!-- <section class="location-not-found" aria-live="assertive" hidden>
-            <h1>Sorry, Location not found!!!</h1>
-            <img src="/assets/404.png" alt="404 Error Image" />
-        </section> -->
+        <section class="location-not-found" aria-live="polite" hidden>
+            <h2>Sorry, location not found!</h2>
+            <img src="/assets/404.png" alt="Location not found illustration">
+        </section>
 
-        <!-- <main class="weather-body">
-            <img src="/assets/cloud.png" alt="Weather Condition Icon" class="weather-img" />
+        <section class="weather-body" aria-live="polite">
+            <img src="/assets/cloud.png" alt="Current weather condition" class="weather-img">
 
-            <article class="weather-box">
-                <p class="temperature">0 <sup>°C</sup></p>
-                <p class="description">light rain</p>
-            </article>
+            <div class="weather-box">
+                <p class="temperature" aria-label="Temperature">0 <sup>°C</sup></p>
+                <p class="description" aria-label="Weather description">Light rain</p>
+            </div>
 
-            <section class="weather-details">
-                <div class="humidity">
+            <div class="weather-details">
+                <div class="humidity" aria-label="Humidity">
                     <i class="fa-sharp fa-solid fa-droplet" aria-hidden="true"></i>
                     <div class="text">
                         <span id="humidity">45%</span>
@@ -38,17 +57,18 @@
                     </div>
                 </div>
 
-                <div class="wind">
+                <div class="wind" aria-label="Wind speed">
                     <i class="fa-solid fa-wind" aria-hidden="true"></i>
                     <div class="text">
                         <span id="wind-speed">12Km/H</span>
                         <p>Wind Speed</p>
                     </div>
                 </div>
-            </section>
-        </main> -->
-    </div>
+            </div>
+        </section>
+    </main>
 
-    <script src="https://kit.fontawesome.com/e4ff6c760c.js" crossorigin="anonymous"></script>
+    <!-- JS -->
+    <script src="script.js"></script>
 </body>
 </html>
