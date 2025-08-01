@@ -21,7 +21,7 @@ searchBtn.addEventListener("click", async (event) => {
     // Fetch API
     try {
         const response = await fetch(
-            `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}`
+            `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`
         );
 
         if (!response.ok) {
