@@ -9,7 +9,7 @@ const humidity = document.getElementById("humidity");
 const windSpeed = document.getElementById("wind-speed");
 const weatherImg = document.querySelector(".weather-img");
 
-const API_KEY = "f0a4d9b122617da13f3f53d289e27bcf"; 
+const API_KEY = 'f0a4d9b122617da13f3f53d289e27bcf'; 
 
 searchBtn.addEventListener("click", async (event) => {
     event.preventDefault(); // prevent form submission
@@ -21,7 +21,7 @@ searchBtn.addEventListener("click", async (event) => {
     // Fetch API
     try {
         const response = await fetch(
-            `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}`
+            `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`
         );
 
         if (!response.ok) {
